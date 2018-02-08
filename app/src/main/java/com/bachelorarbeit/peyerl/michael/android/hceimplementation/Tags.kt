@@ -7,65 +7,67 @@ class Tags {
     companion object {
 
         private val tags = mapOf<String, String>(
+        Pair("4F", "ADF Name"),
+        Pair("50", "Application Label"),
+        Pair("57", "Track 2 Equivalent Data"),
+        Pair("5A", "Primary Account Number (PAN)"),
+        Pair("61", "PSE Record"),
+        Pair("6F", "FCI Template"),
+        Pair("70", "READ RECORD Response"),
+        Pair("77", "GPO Response Format 2"),
+        Pair("80", "GPO Response Format 1"),
+        Pair("82", "Application Interchange Profile (AIP)"),
+        Pair("84", "DF Name"),
+        Pair("87", "Application Priority Indicator"),
+        Pair("88", "Short File Indicator (SFI)"),
+        Pair("8C", "CDOL 1"),
+        Pair("8D", "CDOL 2"),
+        Pair("8E", "Cardholder Verification Method List"),
+        Pair("94", "Application File Locator"),
+        Pair("A5", "FCI Proprietary Template"),
+        Pair("5F20", "Cardholder Name"),
+        Pair("5F24", "Application Expiration Date"),
+        Pair("5F25", "Application Effective Date"),
+        Pair("5F28", "Issuer Country Code"),
+        Pair("5F30", "Service Code"),
+        Pair("5F34", "PAN Sequence Number"),
+        Pair("5F57", "Account Type"),
+        Pair("5F2D", "Language Preference"),
+        Pair("9000", "StatusWord Ok"),
+        Pair("9F07", "Application Usage Control"),
+        Pair("9F08", "Application Version Number"),
+        Pair("9F0D", "Issuer Action Code - Default"),
+        Pair("9F0E", "Issuer Action Code - Denial"),
+        Pair("9F0F", "Issuer Action Code - Online"),
+        Pair("9F11", "Issuer Code Table Index"),
+        Pair("9F12", "Application Preferred Name"),
+        Pair("9F32", "Issuer Public Key Exponent"),
+        Pair("9F38", "PDOL"),
+        Pair("9F42", "Application Currency Code"),
+        Pair("9F43", "Application Reference Currency Code"),
+        Pair("9F44", "Application Currency Exponent"),
+        Pair("9F46", "ICC Public Key Certificate"),
+        Pair("9F47", "ICC Public Key Exponent"),
+        Pair("9F48", "ICC Public Key Remainder"),
+        Pair("9F49", "DDOL"),
+        Pair("9F4A", "Satic Data Authentication Tag List"),
+        Pair("9F4B", "Signed Dynamic Application Data"),
+        Pair("9F4D", "Log Entry"),
+        Pair("9F5F", "DS Slot Availability"),
+        Pair("9F6F", "DS Slot Management Control"),
+        Pair("9F7D", "DS Summary 1"),
+        Pair("9F7F", "DS Unpredictable Number"),
+        Pair("BF0C", "FCI Issuer Discretionary Data"))
 
-        )
-
-        const val ADF_NAME = "4F"
-        const val APPLICATION_LABEL = "50"
-        const val TRACK_2_EQUIVALENT_DATA = "57"
-        const val PRIMARY_ACCOUNT_NUMBER = "5A"
-        const val PSE_RECORD = "61"
-        const val FCI_TEMPLATE = "6F"
-        const val READ_RECORD_RESPONSE = "70"
-        const val GPO_RESPONSE_FORMAT2 = "77"
-        const val GPO_RESPONSE_FORMAT1 = "80"
-        const val APPLICATION_INTERCHANGE_PROFILE = "82"
-        const val DF_NAME = "84"
-        const val APPLICATION_PRIORITY_INDICATOR = "87"
         const val SFI = "88"
-        const val CDOL1 = "8C"
-        const val CDOL2 = "8D"
-        const val CARDHOLDER_VERIFICATION_METHOD_LIST = "8E"
-        const val APPLICATION_FILE_LOCATOR = "94"
-        const val FCI_PROPRIETARY_TEMPLATE = "A5"
-        const val CARDHOLDER_NAME = "5F20"
-        const val APPLICATION_EXPIRATION_DATE = "5F24"
-        const val APPLICATION_EFFECTIVE_DATE = "5F25"
-        const val ISSUER_COUNTRY_CODE = "5F28"
-        const val SERVICE_CODE = "5F30"
-        const val PAN_SEQUENCE_NUMBER = "5F34"
-        const val ACCOUNT_TYPE = "5F57"
-        const val LANGUAGE_PREFERENCE = "5F2D"
-        const val STATUSWORD_OK = "9000"
-        const val APPLICATION_USAGE_CONTROL = "9F07"
-        const val APPLICATION_VERSION_NR = "9F08"
-        const val ISSUER_ACTION_CODE_DEFAULT = "9F0D"
-        const val ISSUER_ACTION_CODE_DENIAL = "9F0E"
-        const val ISSUER_ACTION_CODE_ONLINE = "9F0F"
-        const val ISSUER_CODE_TABLE_INDEX = "9F11"
-        const val APPLICATION_PREFERRED_NAME = "9F12"
-        const val ISSUER_PUBLIC_KEY_EXPONENT = "9F32"
+        const val ADF_NAME = "4F"
         const val PDOL = "9F38"
-        const val APPLICATION_CURRENCY_CODE = "9F42"
-        const val APPLICATION_REFERENCE_CURRENCY_EXPONENT = "9F43"
-        const val APPLICATION_CURRENCY_EXPONENT = "9F44"
-        const val ICC_PUBLIC_KEY_CERTIFICATE = "9F46"
-        const val ICC_PUBLIC_KEY_EXPONENT = "9F47"
-        const val ICC_PUBLIC_KEY_REMAINDER = "9F48"
-        const val DYNAMIC_DATA_AUTHENTICATION_DATA_OBJECT_LIST = "9F49"
-        const val STATIC_AUTHENTICATION_TAG_LIST = "9F4A"
-        const val SIGNED_DYNAMIC_APPLICATION_DATA = "9F4B"
-        const val LOG_ENTRY = "9F4D"
-        const val DS_ODS_CARD = "9F54"
+        const val APPLICATION_INTERCHANGE_PROFILE = "82"
+        const val APPLICATION_FILE_LOCATOR = "94"
+        const val STATUSWORD_OK = "9000"
         val PDOL_TAGS = arrayOf("9F5C")
-        const val DS_SLOT_AVAILABILITY = "9F5F"
-        const val DS_SLOT_MANAGEMENT_CONTROL = "9F6F"
-        const val DS_SUMMARY_1 = "9F7D"
-        const val DS_UNPREDICTABLE_NR = "9F7F"
-        const val FCI_ISSUER_DISCRETIONARY_DATA = "BF0C"
 
-
-        private val transformable = arrayOf(APPLICATION_LABEL, LANGUAGE_PREFERENCE, DF_NAME, APPLICATION_PREFERRED_NAME)
+        private val transformable = arrayOf("50", "5F2D", "84", "9F12")
         val transformFunctions: MutableMap<String, (String?) -> String> = mutableMapOf()
 
 
@@ -99,9 +101,13 @@ class Tags {
 
         fun transform(tag: String, value: String) = if (transformFunctions[tag] != null) transformFunctions[tag]!!(value) else value
 
+        fun contains(tag: String) = tags.keys.contains(tag)
+
+        fun nameOf(tag: String) = tags[tag]
+
         init {
             transformable.associateTo(transformFunctions) { it to ::transformHexToAscii }
-            transformFunctions[Tags.APPLICATION_FILE_LOCATOR] = ::group4Bytes
+            transformFunctions["94"] = ::group4Bytes
         }
     }
 }
