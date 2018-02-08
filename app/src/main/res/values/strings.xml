@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">HCEImplementation</string>
+
+    <!-- todo: Write proper description -->
+    <string name="apduservice_desc">This is the Description of the HostApduService</string>
+    <string name="aidgroup_desc">This is the Description of the AID group</string>
+</resources>
