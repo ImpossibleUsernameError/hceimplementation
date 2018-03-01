@@ -49,5 +49,12 @@ class Utils {
             }
             return nr
         }
+        
+        fun convertHexToInt(hex: String): Int {
+            if(hex.isBlank()) return 0
+            return hex.reversed().foldIndexed(0){i, acc, c ->
+                acc + HEX_CHARS.indexOf(c) * Math.pow(16.toDouble(), i.toDouble()).toInt()
+            }
+        }
     }
 }

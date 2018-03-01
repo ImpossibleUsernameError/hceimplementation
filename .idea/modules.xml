@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HCEImplementation.iml" filepath="$PROJECT_DIR$/HCEImplementation.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/relaycomm/relaycomm.iml" filepath="$PROJECT_DIR$/relaycomm/relaycomm.iml" />
     </modules>
   </component>
 </project>

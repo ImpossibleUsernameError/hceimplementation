@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">RelayComm</string>
+    <string name="connect">Connect</string>
+    <string name="client">Client</string>
+    <string name="server">Server</string>
+    <string name="ip_address">IP Address</string>
+    <string name="port">Port</string>
+    <string name="send">Send</string>
+</resources>

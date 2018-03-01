@@ -7,8 +7,13 @@
     <aid-group android:description="@string/aidgroup_desc"
         android:category="other">
 
-        <!-- todo: replace with correct AIDs -->
-    <aid-filter android:name="F0010203040506"/>
-    <aid-filter android:name="F0394148148100"/>
+        <!-- 1PAY.SYS.DDF01 -->
+        <aid-filter android:name="315041592E5359532E4444463031"/>
+
+        <!-- 2PAY.SYS.DDF01 -->
+        <aid-filter android:name="325041592E5359532E4444463031"/>
+
+        <!-- MAESTRO -->
+        <aid-filter android:name="A0000000043060"/>
     </aid-group>
 </host-apdu-service>
